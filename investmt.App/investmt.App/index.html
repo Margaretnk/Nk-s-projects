@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="investmentApp.css">
+</head>
+<body>
+    <h1 style="text-transform: capitalize;">investment Application</h1>
+    <p class="Amount" id="invest-el" style="font-size: larger;"> Investment Amount: 0</p>
+    <p class="Percentage" id="percent1"> Percentage Earn: 0</p>
+    <p class="TEarn"  id="totalEar-n">Total Earn: 0</p>
+    <p class ="Tvat" id="vat1">Total Vat: 0</p>
+    <p class="vat" id="TEarn">Total earn after Vat: 0</p> 
+
+    <button class="nob" type="button" onclick ="investment()">Invest</button>
+
+    <span ><button class="Withdraw" >Withdraw</button></span>
+    <h4 id="body"></h4>
+
+    <!-- Javascript begins here -->
+    <script>
+            let investEl = document.getElementById('invest-el')
+            let percentEl = document.getElementById('percent1')
+            let totalEarN = document.getElementById('totalEar-n')
+            let Tvat = document.getElementById('vat1')
+            let TTvat = document.getElementById('TEarn')
+
+         function   investment()
+         {
+            var invest = prompt('Invest amount')
+            investEl.textContent = `Amount invested : ${invest}`
+            
+            var percent = invest * 0.1
+            percentEl.textContent = "Percentage Earn :" + percent 
+
+            
+
+            totalEarn = parseInt(invest) + parseInt(percent)
+
+            totalEarN.textContent = "Total Earn :" + totalEarn
+
+            var vat = totalEarn * 0.02
+
+            Tvat.textContent = "Vat :" + vat
+            
+            var tEarn = parseInt(totalEarn) - parseInt(vat)
+            TTvat.textContent = "Total earn after Vat :" + tEarn
+
+            
+            //     do {
+            //         var userInput = prompt('please enter a number:', 'Type a number!');
+            //         if (/^[0-9.,]+$/.test(userInput)) {
+            //             console.log("Valid input: " + userInput);
+            //     break;
+            // } else {
+            //     alert("Please enter a valid number.");
+            // }
+            //     }
+            //  while (true);
+                                                
+
+
+           
+           
+         }
+        
+         
+
+    </script>
+
+ 
+<!-- <script>
+    function getUserInput() {
+        do {
+            var userInput = window.prompt("Please enter a number:", "Type a number!");
+            // Use the regular expression to test against the input
+            if (/^[0-9.,]+$/.test(userInput)) {
+                // Input contains only numeric characters
+                console.log("Valid input: " + userInput);
+                break;
+            } else {
+                // Input contains non-numeric characters
+                window.alert("Please enter a valid number.");
+            }
+        } while (true);
+    }
+    </script> -->
+    
+
+
+
+</body>
+<script>
+    function getUserInput() {
+        do {
+            var userInput = window.prompt("Please enter a number:", "Type a number!");
+            // Use the regular expression to test against the input
+            if (/^[0-9.,]+$/.test(userInput)) {
+                // Input contains only numeric characters
+                console.log("Valid input: " + userInput);
+                break;
+            } else {
+                // Input contains non-numeric characters
+                window.alert("Please enter a valid number.");
+            }
+        } while (false);
+    }
+    </script>
+</html>
